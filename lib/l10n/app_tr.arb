@@ -1,0 +1,97 @@
+{
+  "@@locale": "tr",
+  "appTitle": "Ehliyet Hazırlık",
+  "splashLoading": "Yükleniyor...",
+  "onboardingTitle1": "Ehliyet Sınavına Hazırlan",
+  "onboardingDesc1": "Reklamsız, modern arayüzle gerçek sınav formatında çalış.",
+  "onboardingTitle2": "AI ile Öğren",
+  "onboardingDesc2": "Yanlış yaptığın sorulara yapay zeka destekli açıklamalar al.",
+  "onboardingTitle3": "Yazılı + Uygulamalı",
+  "onboardingDesc3": "Mock sınav, konu çalışması ve uygulamalı sınav videoları tek uygulamada.",
+  "onboardingSkip": "Atla",
+  "onboardingNext": "İleri",
+  "onboardingStart": "Başla",
+  "loginTitle": "Giriş Yap",
+  "loginSubtitle": "İlerlemeni kaydetmek için hesabınla giriş yap.",
+  "emailLabel": "E-posta",
+  "passwordLabel": "Şifre",
+  "loginButton": "Giriş Yap",
+  "registerButton": "Kayıt Ol",
+  "googleSignIn": "Google ile Giriş Yap",
+  "homeTab": "Ana Sayfa",
+  "quizTab": "Sınav",
+  "practiceTab": "Uygulama",
+  "progressTab": "İlerleme",
+  "homeGreeting": "Merhaba, {name}!",
+  "@homeGreeting": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "homeDailyGoal": "Günlük Hedef",
+  "homeQuickStart": "Hızlı Başlat",
+  "homeMockExam": "Mock Sınav",
+  "homeTopicStudy": "Konu Çalışması",
+  "quizTitle": "Sınav Modları",
+  "practiceTitle": "Uygulamalı Sınav",
+  "progressTitle": "İlerlemen",
+  "settingsTitle": "Ayarlar",
+  "signOut": "Çıkış Yap",
+  "errorGeneric": "Bir hata oluştu. Lütfen tekrar dene.",
+  "errorInvalidEmail": "Geçersiz e-posta adresi.",
+  "errorWeakPassword": "Şifre en az 6 karakter olmalı.",
+  "errorUserNotFound": "Kullanıcı bulunamadı.",
+  "errorWrongPassword": "Hatalı şifre.",
+  "errorEmailInUse": "Bu e-posta zaten kullanımda.",
+  "mockExamTitle": "Mock Sınav",
+  "mockExamDescription": "Gerçek ehliyet sınavı formatında 50 soruluk deneme sınavı.",
+  "mockExamSubtitle": "50 soru, 45 dakika",
+  "mockExamQuestionCount": "Soru Sayısı",
+  "mockExamDuration": "Süre",
+  "mockExamDurationValue": "45 dakika",
+  "mockExamDistribution": "Konu Dağılımı",
+  "mockExamDistributionValue": "Trafik 23 · İlk Yardım 12 · Motor 8 · Çevre 7",
+  "mockExamStart": "Sınava Başla",
+  "topicSelectTitle": "Konu Seç",
+  "topicSelectSubtitle": "Tek konuya odaklanarak çalış",
+  "topicQuestionCount": "20 soruluk set",
+  "quizSessionTitle": "Sınav",
+  "quizNoSession": "Aktif sınav bulunamadı.",
+  "quizPrevious": "Önceki",
+  "quizNext": "Sonraki",
+  "quizFinish": "Bitir",
+  "quizFinishTitle": "Sınavı Bitir",
+  "quizFinishMessage": "{count} soruyu boş bıraktın. Sınavı bitirmek istiyor musun?",
+  "@quizFinishMessage": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "quizContinue": "Devam Et",
+  "quizResultTitle": "Sınav Sonucu",
+  "quizResultPassed": "Tebrikler, geçtin!",
+  "quizResultFailed": "Tekrar denemelisin",
+  "quizResultScore": "{correct} / {total} doğru (%{percentage})",
+  "@quizResultScore": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      },
+      "percentage": {
+        "type": "int"
+      }
+    }
+  },
+  "quizResultCorrect": "Doğru",
+  "quizResultWrong": "Yanlış",
+  "quizResultByCategory": "Konu Bazlı Sonuç",
+  "quizBackHome": "Ana Sayfaya Dön",
+  "quizRetry": "Yeni Mock Sınav"
+}
