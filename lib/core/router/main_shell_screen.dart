@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../features/home/presentation/screens/home_screen.dart';
+import '../../features/practice/presentation/screens/practice_tab_screen.dart';
+import '../../features/progress/presentation/screens/progress_tab_screen.dart';
 import '../../features/quiz/presentation/screens/quiz_tab_screen.dart';
 import '../../l10n/app_localizations.dart';
-import '../widgets/placeholder_screens.dart';
 import 'app_routes.dart';
 
 class MainShellScreen extends StatelessWidget {

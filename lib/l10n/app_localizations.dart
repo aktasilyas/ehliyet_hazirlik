@@ -484,6 +484,12 @@ abstract class AppLocalizations {
   /// **'Konu Bazlı Sonuç'**
   String get quizResultByCategory;
 
+  /// No description provided for @quizWrongAnswers.
+  ///
+  /// In tr, this message translates to:
+  /// **'Yanlış Cevaplar — AI Açıklama'**
+  String get quizWrongAnswers;
+
   /// No description provided for @quizBackHome.
   ///
   /// In tr, this message translates to:
@@ -495,6 +501,96 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Yeni Mock Sınav'**
   String get quizRetry;
+
+  /// No description provided for @progressOverview.
+  ///
+  /// In tr, this message translates to:
+  /// **'Genel Özet'**
+  String get progressOverview;
+
+  /// No description provided for @progressTotalSessions.
+  ///
+  /// In tr, this message translates to:
+  /// **'Toplam Sınav'**
+  String get progressTotalSessions;
+
+  /// No description provided for @progressAccuracy.
+  ///
+  /// In tr, this message translates to:
+  /// **'Doğruluk Oranı'**
+  String get progressAccuracy;
+
+  /// No description provided for @progressCorrect.
+  ///
+  /// In tr, this message translates to:
+  /// **'Doğru / Toplam'**
+  String get progressCorrect;
+
+  /// No description provided for @progressByCategory.
+  ///
+  /// In tr, this message translates to:
+  /// **'Konu Dağılımı'**
+  String get progressByCategory;
+
+  /// No description provided for @progressNoData.
+  ///
+  /// In tr, this message translates to:
+  /// **'Henüz yeterli veri yok. Sınav çözerek başla!'**
+  String get progressNoData;
+
+  /// No description provided for @progressWrongReview.
+  ///
+  /// In tr, this message translates to:
+  /// **'{count} yanlış soruyu tekrar et'**
+  String progressWrongReview(int count);
+
+  /// No description provided for @wrongReviewTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Yanlış Analizim'**
+  String get wrongReviewTitle;
+
+  /// No description provided for @wrongReviewEmpty.
+  ///
+  /// In tr, this message translates to:
+  /// **'Yanlış soru kaydı yok. Harika gidiyorsun!'**
+  String get wrongReviewEmpty;
+
+  /// No description provided for @wrongReviewQuestion.
+  ///
+  /// In tr, this message translates to:
+  /// **'Soru: {id}'**
+  String wrongReviewQuestion(String id);
+
+  /// No description provided for @wrongReviewStats.
+  ///
+  /// In tr, this message translates to:
+  /// **'{correct} / {answered} doğru'**
+  String wrongReviewStats(int correct, int answered);
+
+  /// No description provided for @practiceExamRequirement.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sınavda Ne İsteniyor?'**
+  String get practiceExamRequirement;
+
+  /// No description provided for @aiExplainTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'AI Açıklama'**
+  String get aiExplainTitle;
+
+  /// No description provided for @aiExplainButton.
+  ///
+  /// In tr, this message translates to:
+  /// **'AI ile Açıkla'**
+  String get aiExplainButton;
+
+  /// No description provided for @aiExplainCached.
+  ///
+  /// In tr, this message translates to:
+  /// **'Önbellekten yüklendi'**
+  String get aiExplainCached;
 }
 
 class _AppLocalizationsDelegate

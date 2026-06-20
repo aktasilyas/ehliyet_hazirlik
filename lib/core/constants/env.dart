@@ -10,7 +10,14 @@ abstract final class Env {
     defaultValue: 'YOUR_SUPABASE_ANON_KEY',
   );
 
+  static const String anthropicApiKey = String.fromEnvironment(
+    'ANTHROPIC_API_KEY',
+  );
+
   static const bool skipFirebaseInit = bool.fromEnvironment(
     'SKIP_FIREBASE_INIT',
   );
+
+  static bool get isAnthropicConfigured =>
+      anthropicApiKey.isNotEmpty && !anthropicApiKey.startsWith('YOUR_');
 }
