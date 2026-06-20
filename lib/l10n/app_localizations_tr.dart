@@ -215,8 +215,62 @@ class AppLocalizationsTr extends AppLocalizations {
   String get quizResultByCategory => 'Konu Bazlı Sonuç';
 
   @override
+  String get quizWrongAnswers => 'Yanlış Cevaplar — AI Açıklama';
+
+  @override
   String get quizBackHome => 'Ana Sayfaya Dön';
 
   @override
   String get quizRetry => 'Yeni Mock Sınav';
+
+  @override
+  String get progressOverview => 'Genel Özet';
+
+  @override
+  String get progressTotalSessions => 'Toplam Sınav';
+
+  @override
+  String get progressAccuracy => 'Doğruluk Oranı';
+
+  @override
+  String get progressCorrect => 'Doğru / Toplam';
+
+  @override
+  String get progressByCategory => 'Konu Dağılımı';
+
+  @override
+  String get progressNoData => 'Henüz yeterli veri yok. Sınav çözerek başla!';
+
+  @override
+  String progressWrongReview(int count) {
+    return '$count yanlış soruyu tekrar et';
+  }
+
+  @override
+  String get wrongReviewTitle => 'Yanlış Analizim';
+
+  @override
+  String get wrongReviewEmpty => 'Yanlış soru kaydı yok. Harika gidiyorsun!';
+
+  @override
+  String wrongReviewQuestion(String id) {
+    return 'Soru: $id';
+  }
+
+  @override
+  String wrongReviewStats(int correct, int answered) {
+    return '$correct / $answered doğru';
+  }
+
+  @override
+  String get practiceExamRequirement => 'Sınavda Ne İsteniyor?';
+
+  @override
+  String get aiExplainTitle => 'AI Açıklama';
+
+  @override
+  String get aiExplainButton => 'AI ile Açıkla';
+
+  @override
+  String get aiExplainCached => 'Önbellekten yüklendi';
 }

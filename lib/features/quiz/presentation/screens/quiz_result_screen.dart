@@ -6,14 +6,46 @@ import '../../../../core/constants/app_colors.dart';
 import '../../../../core/router/app_routes.dart';
 import '../../../../core/widgets/app_card.dart';
 import '../../../../l10n/app_localizations.dart';
+import '../../../ai_explain/presentation/widgets/ai_explain_button.dart';
+import '../../../auth/presentation/providers/auth_providers.dart';
+import '../../../progress/presentation/providers/progress_providers.dart';
 import '../../domain/entities/question_category.dart';
+import '../../domain/entities/question_entity.dart';
 import '../providers/quiz_providers.dart';
 
-class QuizResultScreen extends ConsumerWidget {
+class QuizResultScreen extends ConsumerStatefulWidget {
   const QuizResultScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<QuizResultScreen> createState() => _QuizResultScreenState();
+}
+
+class _QuizResultScreenState extends ConsumerState<QuizResultScreen> {
+  var _saved = false;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) => _saveProgress());
+  }
+
+  Future<void> _saveProgress() async {
+    if (_saved) {
+      return;
+    }
+
+    final session = ref.read(quizSessionControllerProvider);
+    final user = ref.read(authStateProvider).valueOrNull;
+    if (session == null || !session.isCompleted || user == null) {
+      return;
+    }
+
+    _saved = true;
+    await ref.read(saveQuizSessionUseCaseProvider).call(user.id, session);
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final session = ref.watch(quizSessionControllerProvider);
 
@@ -29,6 +61,10 @@ class QuizResultScreen extends ConsumerWidget {
     final wrong = total - correct;
     final percentage = total == 0 ? 0 : ((correct / total) * 100).round();
     final passed = percentage >= 70;
+    final wrongQuestions = session.questions.where((question) {
+      final answer = session.answers[question.id];
+      return answer != null && !question.isCorrect(answer);
+    }).toList();
 
     return Scaffold(
       appBar: AppBar(title: Text(l10n.quizResultTitle)),
@@ -109,6 +145,36 @@ class QuizResultScreen extends ConsumerWidget {
               ),
             );
           }),
+          if (wrongQuestions.isNotEmpty) ...[
+            const SizedBox(height: 16),
+            Text(
+              l10n.quizWrongAnswers,
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            const SizedBox(height: 12),
+            ...wrongQuestions.map(
+              (QuestionEntity question) => Padding(
+                padding: const EdgeInsets.only(bottom: 12),
+                child: AppCard(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        question.questionText,
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
+                      const SizedBox(height: 8),
+                      AiExplainButton(
+                        question: question,
+                        selectedOption:
+                            session.answers[question.id] ?? '',
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
           const SizedBox(height: 24),
           ElevatedButton(
             onPressed: () {

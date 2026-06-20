@@ -92,6 +92,46 @@
   "quizResultCorrect": "Doğru",
   "quizResultWrong": "Yanlış",
   "quizResultByCategory": "Konu Bazlı Sonuç",
+  "quizWrongAnswers": "Yanlış Cevaplar — AI Açıklama",
   "quizBackHome": "Ana Sayfaya Dön",
-  "quizRetry": "Yeni Mock Sınav"
+  "quizRetry": "Yeni Mock Sınav",
+  "progressOverview": "Genel Özet",
+  "progressTotalSessions": "Toplam Sınav",
+  "progressAccuracy": "Doğruluk Oranı",
+  "progressCorrect": "Doğru / Toplam",
+  "progressByCategory": "Konu Dağılımı",
+  "progressNoData": "Henüz yeterli veri yok. Sınav çözerek başla!",
+  "progressWrongReview": "{count} yanlış soruyu tekrar et",
+  "@progressWrongReview": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "wrongReviewTitle": "Yanlış Analizim",
+  "wrongReviewEmpty": "Yanlış soru kaydı yok. Harika gidiyorsun!",
+  "wrongReviewQuestion": "Soru: {id}",
+  "@wrongReviewQuestion": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "wrongReviewStats": "{correct} / {answered} doğru",
+  "@wrongReviewStats": {
+    "placeholders": {
+      "correct": {
+        "type": "int"
+      },
+      "answered": {
+        "type": "int"
+      }
+    }
+  },
+  "practiceExamRequirement": "Sınavda Ne İsteniyor?",
+  "aiExplainTitle": "AI Açıklama",
+  "aiExplainButton": "AI ile Açıkla",
+  "aiExplainCached": "Önbellekten yüklendi"
 }
