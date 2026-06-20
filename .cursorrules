@@ -8,3 +8,13 @@ Never use setState except in very simple isolated widgets.
 Always write null-safe Dart code.
 When creating a new feature, always create: domain/entities, domain/repositories (abstract), domain/usecases, data/datasources, data/repositories (impl), presentation/providers, presentation/screens.
 Respond in Turkish when I write in Turkish.
+
+## Git branch stratejisi
+- `main` — kararlı sürüm; yalnızca release merge.
+- `develop` — entegrasyon dalı; feature branch'ler buraya merge edilir.
+- `feature/week-N-<kisa-aciklama>` — haftalık özellik geliştirme (ör. `feature/week-3-progress-ai-practice`).
+- `fix/<kisa-aciklama>` — hata düzeltmeleri.
+- `release/vX.Y.Z` — sürüm hazırlığı.
+- `hotfix/<kisa-aciklama>` — production acil düzeltmeler.
+- Yeni iş her zaman güncel `develop`'dan branch alır; `main` üzerinde doğrudan geliştirme yapılmaz.
+- Merge öncesi `git fetch origin` + `flutter analyze` + `flutter test` çalıştırılır.

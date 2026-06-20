@@ -7,6 +7,9 @@ import '../../features/auth/presentation/providers/auth_providers.dart';
 import '../../features/auth/presentation/screens/login_screen.dart';
 import '../../features/auth/presentation/screens/onboarding_screen.dart';
 import '../../features/auth/presentation/screens/splash_screen.dart';
+import '../../features/practice/presentation/screens/practice_detail_screen.dart';
+import '../../features/practice/presentation/screens/practice_tab_screen.dart';
+import '../../features/progress/presentation/screens/wrong_review_screen.dart';
 import '../../features/quiz/presentation/screens/mock_exam_screen.dart';
 import '../../features/quiz/presentation/screens/quiz_result_screen.dart';
 import '../../features/quiz/presentation/screens/quiz_session_screen.dart';
@@ -99,13 +102,12 @@ GoRouter appRouter(Ref ref) {
       ),
       GoRoute(
         path: AppRoutes.practice,
-        builder: (context, state) =>
-            const PlaceholderScreen(title: 'Uygulamalı Sınav'),
+        builder: (context, state) => const PracticeTabScreen(),
       ),
       GoRoute(
         path: AppRoutes.practiceDetail,
-        builder: (context, state) => PlaceholderScreen(
-          title: 'Uygulama: ${state.pathParameters['id']}',
+        builder: (context, state) => PracticeDetailScreen(
+          topicId: state.pathParameters['id']!,
         ),
       ),
       GoRoute(
@@ -121,8 +123,7 @@ GoRouter appRouter(Ref ref) {
       ),
       GoRoute(
         path: AppRoutes.wrongReview,
-        builder: (context, state) =>
-            const PlaceholderScreen(title: 'Yanlış Analizim'),
+        builder: (context, state) => const WrongReviewScreen(),
       ),
       GoRoute(
         path: AppRoutes.settings,
