@@ -591,6 +591,156 @@ abstract class AppLocalizations {
   /// In tr, this message translates to:
   /// **'Önbellekten yüklendi'**
   String get aiExplainCached;
+
+  /// No description provided for @signsTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Trafik Levhaları'**
+  String get signsTitle;
+
+  /// No description provided for @signsSearch.
+  ///
+  /// In tr, this message translates to:
+  /// **'Levha ara...'**
+  String get signsSearch;
+
+  /// No description provided for @signsEmpty.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sonuç bulunamadı.'**
+  String get signsEmpty;
+
+  /// No description provided for @signsDetailDescription.
+  ///
+  /// In tr, this message translates to:
+  /// **'AÇIKLAMA'**
+  String get signsDetailDescription;
+
+  /// No description provided for @premiumTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Premium\'a Geç'**
+  String get premiumTitle;
+
+  /// No description provided for @premiumSubtitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'Tüm özelliklerin kilidini aç'**
+  String get premiumSubtitle;
+
+  /// No description provided for @premiumBadge.
+  ///
+  /// In tr, this message translates to:
+  /// **'Premium'**
+  String get premiumBadge;
+
+  /// No description provided for @premiumLocked.
+  ///
+  /// In tr, this message translates to:
+  /// **'Premium İçerik'**
+  String get premiumLocked;
+
+  /// No description provided for @premiumUnlockCta.
+  ///
+  /// In tr, this message translates to:
+  /// **'Kilidi açmak için dokun'**
+  String get premiumUnlockCta;
+
+  /// No description provided for @premiumActive.
+  ///
+  /// In tr, this message translates to:
+  /// **'Premium üyeliğiniz aktif'**
+  String get premiumActive;
+
+  /// No description provided for @premiumRestore.
+  ///
+  /// In tr, this message translates to:
+  /// **'Satın alımı geri yükle'**
+  String get premiumRestore;
+
+  /// No description provided for @premiumSubscribe.
+  ///
+  /// In tr, this message translates to:
+  /// **'Abone Ol'**
+  String get premiumSubscribe;
+
+  /// No description provided for @premiumBestValue.
+  ///
+  /// In tr, this message translates to:
+  /// **'En İyi Değer'**
+  String get premiumBestValue;
+
+  /// No description provided for @premiumFeatureUnlimited.
+  ///
+  /// In tr, this message translates to:
+  /// **'Sınırsız yapay zeka açıklaması'**
+  String get premiumFeatureUnlimited;
+
+  /// No description provided for @premiumFeatureAi.
+  ///
+  /// In tr, this message translates to:
+  /// **'Gelişmiş AI açıklamaları'**
+  String get premiumFeatureAi;
+
+  /// No description provided for @premiumFeatureStats.
+  ///
+  /// In tr, this message translates to:
+  /// **'Detaylı istatistikler ve grafikler'**
+  String get premiumFeatureStats;
+
+  /// No description provided for @premiumFeatureSigns.
+  ///
+  /// In tr, this message translates to:
+  /// **'Tüm trafik levhaları (40+)'**
+  String get premiumFeatureSigns;
+
+  /// No description provided for @premiumFeatureNotifications.
+  ///
+  /// In tr, this message translates to:
+  /// **'Akıllı çalışma hatırlatıcıları'**
+  String get premiumFeatureNotifications;
+
+  /// No description provided for @statsTitle.
+  ///
+  /// In tr, this message translates to:
+  /// **'İstatistikler'**
+  String get statsTitle;
+
+  /// No description provided for @statsStreak.
+  ///
+  /// In tr, this message translates to:
+  /// **'Günlük Seri'**
+  String get statsStreak;
+
+  /// No description provided for @statsLongestStreak.
+  ///
+  /// In tr, this message translates to:
+  /// **'En Uzun Seri'**
+  String get statsLongestStreak;
+
+  /// No description provided for @statsStudiedToday.
+  ///
+  /// In tr, this message translates to:
+  /// **'Bugün'**
+  String get statsStudiedToday;
+
+  /// No description provided for @statsWeeklyActivity.
+  ///
+  /// In tr, this message translates to:
+  /// **'Haftalık Aktivite'**
+  String get statsWeeklyActivity;
+
+  /// No description provided for @statsAccuracyByCategory.
+  ///
+  /// In tr, this message translates to:
+  /// **'Konu Bazlı Doğruluk'**
+  String get statsAccuracyByCategory;
+
+  /// No description provided for @statsOverall.
+  ///
+  /// In tr, this message translates to:
+  /// **'Genel İstatistikler'**
+  String get statsOverall;
 }
 
 class _AppLocalizationsDelegate

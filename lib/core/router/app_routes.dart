@@ -10,9 +10,10 @@ abstract final class AppRoutes {
   static const practice = '/practice';
   static const practiceDetail = '/practice/:id';
   static const signs = '/signs';
-  static const signsCategory = '/signs/:category';
+  static const signDetail = '/signs/detail/:id';
   static const progress = '/progress';
   static const wrongReview = '/wrong-review';
+  static const stats = '/stats';
   static const settings = '/settings';
   static const premium = '/premium';
 }

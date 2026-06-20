@@ -133,5 +133,33 @@
   "practiceExamRequirement": "Sınavda Ne İsteniyor?",
   "aiExplainTitle": "AI Açıklama",
   "aiExplainButton": "AI ile Açıkla",
-  "aiExplainCached": "Önbellekten yüklendi"
+  "aiExplainCached": "Önbellekten yüklendi",
+
+  "signsTitle": "Trafik Levhaları",
+  "signsSearch": "Levha ara...",
+  "signsEmpty": "Sonuç bulunamadı.",
+  "signsDetailDescription": "AÇIKLAMA",
+
+  "premiumTitle": "Premium'a Geç",
+  "premiumSubtitle": "Tüm özelliklerin kilidini aç",
+  "premiumBadge": "Premium",
+  "premiumLocked": "Premium İçerik",
+  "premiumUnlockCta": "Kilidi açmak için dokun",
+  "premiumActive": "Premium üyeliğiniz aktif",
+  "premiumRestore": "Satın alımı geri yükle",
+  "premiumSubscribe": "Abone Ol",
+  "premiumBestValue": "En İyi Değer",
+  "premiumFeatureUnlimited": "Sınırsız yapay zeka açıklaması",
+  "premiumFeatureAi": "Gelişmiş AI açıklamaları",
+  "premiumFeatureStats": "Detaylı istatistikler ve grafikler",
+  "premiumFeatureSigns": "Tüm trafik levhaları (40+)",
+  "premiumFeatureNotifications": "Akıllı çalışma hatırlatıcıları",
+
+  "statsTitle": "İstatistikler",
+  "statsStreak": "Günlük Seri",
+  "statsLongestStreak": "En Uzun Seri",
+  "statsStudiedToday": "Bugün",
+  "statsWeeklyActivity": "Haftalık Aktivite",
+  "statsAccuracyByCategory": "Konu Bazlı Doğruluk",
+  "statsOverall": "Genel İstatistikler"
 }
