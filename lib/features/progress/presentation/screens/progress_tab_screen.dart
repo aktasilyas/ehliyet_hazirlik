@@ -34,7 +34,13 @@ class ProgressTabScreen extends ConsumerWidget {
         title: Text(l10n.progressTitle),
         actions: [
           IconButton(
+            icon: const Icon(Icons.bar_chart),
+            tooltip: l10n.statsTitle,
+            onPressed: () => context.push(AppRoutes.stats),
+          ),
+          IconButton(
             icon: const Icon(Icons.replay),
+            tooltip: l10n.wrongReviewTitle,
             onPressed: () => context.push(AppRoutes.wrongReview),
           ),
         ],

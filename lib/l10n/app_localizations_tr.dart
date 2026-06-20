@@ -273,4 +273,79 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get aiExplainCached => 'Önbellekten yüklendi';
+
+  @override
+  String get signsTitle => 'Trafik Levhaları';
+
+  @override
+  String get signsSearch => 'Levha ara...';
+
+  @override
+  String get signsEmpty => 'Sonuç bulunamadı.';
+
+  @override
+  String get signsDetailDescription => 'AÇIKLAMA';
+
+  @override
+  String get premiumTitle => 'Premium\'a Geç';
+
+  @override
+  String get premiumSubtitle => 'Tüm özelliklerin kilidini aç';
+
+  @override
+  String get premiumBadge => 'Premium';
+
+  @override
+  String get premiumLocked => 'Premium İçerik';
+
+  @override
+  String get premiumUnlockCta => 'Kilidi açmak için dokun';
+
+  @override
+  String get premiumActive => 'Premium üyeliğiniz aktif';
+
+  @override
+  String get premiumRestore => 'Satın alımı geri yükle';
+
+  @override
+  String get premiumSubscribe => 'Abone Ol';
+
+  @override
+  String get premiumBestValue => 'En İyi Değer';
+
+  @override
+  String get premiumFeatureUnlimited => 'Sınırsız yapay zeka açıklaması';
+
+  @override
+  String get premiumFeatureAi => 'Gelişmiş AI açıklamaları';
+
+  @override
+  String get premiumFeatureStats => 'Detaylı istatistikler ve grafikler';
+
+  @override
+  String get premiumFeatureSigns => 'Tüm trafik levhaları (40+)';
+
+  @override
+  String get premiumFeatureNotifications => 'Akıllı çalışma hatırlatıcıları';
+
+  @override
+  String get statsTitle => 'İstatistikler';
+
+  @override
+  String get statsStreak => 'Günlük Seri';
+
+  @override
+  String get statsLongestStreak => 'En Uzun Seri';
+
+  @override
+  String get statsStudiedToday => 'Bugün';
+
+  @override
+  String get statsWeeklyActivity => 'Haftalık Aktivite';
+
+  @override
+  String get statsAccuracyByCategory => 'Konu Bazlı Doğruluk';
+
+  @override
+  String get statsOverall => 'Genel İstatistikler';
 }

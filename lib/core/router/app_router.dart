@@ -9,14 +9,17 @@ import '../../features/auth/presentation/screens/onboarding_screen.dart';
 import '../../features/auth/presentation/screens/splash_screen.dart';
 import '../../features/practice/presentation/screens/practice_detail_screen.dart';
 import '../../features/practice/presentation/screens/practice_tab_screen.dart';
+import '../../features/premium/presentation/screens/paywall_screen.dart';
+import '../../features/progress/presentation/screens/stats_screen.dart';
 import '../../features/progress/presentation/screens/wrong_review_screen.dart';
 import '../../features/quiz/presentation/screens/mock_exam_screen.dart';
 import '../../features/quiz/presentation/screens/quiz_result_screen.dart';
 import '../../features/quiz/presentation/screens/quiz_session_screen.dart';
 import '../../features/quiz/presentation/screens/topic_select_screen.dart';
 import '../../features/settings/presentation/screens/settings_screen.dart';
+import '../../features/signs/presentation/screens/sign_detail_screen.dart';
+import '../../features/signs/presentation/screens/signs_tab_screen.dart';
 import '../providers/onboarding_provider.dart';
-import '../widgets/placeholder_screens.dart';
 import 'app_routes.dart';
 import 'main_shell_screen.dart';
 
@@ -55,9 +58,7 @@ GoRouter appRouter(Ref ref) {
       }
 
       if (user == null) {
-        if (isLogin || isOnboarding) {
-          return null;
-        }
+        if (isLogin || isOnboarding) return null;
         return AppRoutes.login;
       }
 
@@ -112,18 +113,21 @@ GoRouter appRouter(Ref ref) {
       ),
       GoRoute(
         path: AppRoutes.signs,
-        builder: (context, state) =>
-            const PlaceholderScreen(title: 'Trafik Levhaları'),
+        builder: (context, state) => const SignsTabScreen(),
       ),
       GoRoute(
-        path: AppRoutes.signsCategory,
-        builder: (context, state) => PlaceholderScreen(
-          title: 'Levha: ${state.pathParameters['category']}',
+        path: AppRoutes.signDetail,
+        builder: (context, state) => SignDetailScreen(
+          signId: state.pathParameters['id']!,
         ),
       ),
       GoRoute(
         path: AppRoutes.wrongReview,
         builder: (context, state) => const WrongReviewScreen(),
+      ),
+      GoRoute(
+        path: AppRoutes.stats,
+        builder: (context, state) => const StatsScreen(),
       ),
       GoRoute(
         path: AppRoutes.settings,
@@ -132,8 +136,7 @@ GoRouter appRouter(Ref ref) {
       ),
       GoRoute(
         path: AppRoutes.premium,
-        builder: (context, state) =>
-            const PlaceholderScreen(title: 'Premium'),
+        builder: (context, state) => const PaywallScreen(),
       ),
     ],
   );

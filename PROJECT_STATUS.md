@@ -11,7 +11,7 @@
 |---|---|
 | **Son güncelleme** | 2026-06-20 |
 | **Aktif branch** | `develop` |
-| **Sonraki branch** | `feature/week-4-premium-signs-stats` |
+| **Sonraki branch** | `feature/week-5-play-store` |
 | **Uygulama versiyonu** | 1.0.0+1 |
 | **Flutter analyze** | ✅ 0 issue |
 | **Testler** | ✅ 12/12 geçti |
@@ -21,19 +21,21 @@
 ## Git Branch Yapısı
 
 ```
-main      ──●─────────────────────────── (fde502b) Initial commit — Hafta 1–2
+main      ──●──────────────────────────────────── (fde502b) Initial commit — Hafta 1–2
              \
-develop    ───●───────────────────────── (99cfd17) Hafta 3 merge
-               \                        /
-feature/week-3  ●──●──────────────────── (98c2da4) progress + AI + practice
+develop    ───●────────────────────────────────── (Hafta 4 merge)
+               \                        /       /
+feature/week-3  ●──●──────────────────           \
+feature/week-4                          ●──●──────
 ```
 
 | Branch | Durum | Açıklama |
 |--------|-------|----------|
 | `main` | ✅ Yayında | Hafta 1–2 (ilk commit) |
-| `develop` | ✅ Aktif | Hafta 3 dahil |
+| `develop` | ✅ Aktif | Hafta 4 dahil |
 | `feature/week-3-progress-ai-practice` | ✅ Merge edildi | Kapatılabilir |
-| `feature/week-4-premium-signs-stats` | ⏳ Açılmadı | Sonraki sprint |
+| `feature/week-4-premium-signs-stats` | ✅ Merge edildi | Kapatılabilir |
+| `feature/week-5-play-store` | ⏳ Açılmadı | Sonraki sprint |
 
 ---
 
@@ -44,8 +46,8 @@ feature/week-3  ●──●─────────────────�
 | Hafta 1 | Kurulum, Auth, Navigation, Design System | ✅ Tamamlandı |
 | Hafta 2 | Quiz Modülü | ✅ Tamamlandı |
 | Hafta 3 | Progress, AI Explain, Practice | ✅ Tamamlandı |
-| Hafta 4 | Premium (RevenueCat), Trafik Levhaları, İstatistik | ⏳ Bekliyor |
-| Hafta 4+ | Play Store Hazırlığı | ⏳ Bekliyor |
+| Hafta 4 | Premium (RevenueCat), Trafik Levhaları, İstatistik | ✅ Tamamlandı |
+| Hafta 5 | Play Store Hazırlığı | ⏳ Bekliyor |
 
 ---
 
@@ -160,45 +162,59 @@ feature/week-3  ●──●─────────────────�
 
 ---
 
-### ⏳ Hafta 4 — Premium, Trafik Levhaları, İstatistik
+### ✅ Hafta 4 — Premium, Trafik Levhaları, İstatistik
 
-> Branch: `feature/week-4-premium-signs-stats` — **henüz açılmadı**
+> Branch: `feature/week-4-premium-signs-stats` → `develop`'a merge edildi.
 
 #### Premium / RevenueCat
-- [ ] `pubspec.yaml`'a `purchases_flutter` eklenmesi
-- [ ] `PremiumRepository` (abstract) + `RevenueCatPremiumRepositoryImpl`
-- [ ] Offering / entitlement kontrolü
-- [ ] `PaywallScreen` — aylık / yıllık plan, restore satın alma
-- [ ] Premium guard — içerik kilitleme widget'ı
-- [ ] `premiumStatusProvider`
+- [x] `pubspec.yaml`'a `purchases_flutter` (zaten mevcuttu)
+- [x] `PremiumRepository` (abstract) + `RevenueCatPremiumRepositoryImpl`
+- [x] `DevPremiumDataSource` — dev/test fallback (her zaman free döner)
+- [x] Offering / entitlement kontrolü
+- [x] `PaywallScreen` — aylık / yıllık plan, restore satın alma, feature listesi
+- [x] `PremiumGuard` — içerik kilitleme widget'ı (stack blur + kilit ikonu)
+- [x] `premiumStatusProvider` — AsyncNotifierProvider, purchase + restore action
 
 #### Trafik Levhaları (Signs) Feature
-- [ ] `SignEntity` — id, görsel path, kategori, açıklama
-- [ ] `SignsRepository` + yerel JSON veri seti
-- [ ] `SignsTabScreen` — kategori filtrelenmiş grid
-- [ ] `SignDetailScreen` — büyük görsel + açıklama + AI explain butonu
-- [ ] Yerel arama (SearchDelegate veya filterleme)
+- [x] `SignEntity` — id, code, name, category, description, iconCode, isPremium
+- [x] `SignCategory` enum — warning / prohibition / obligation / informational / priority
+- [x] `HardcodedSignsDataSource` — 38 levha (5 kategori)
+- [x] `SignsRepository` (abstract) + `SignsRepositoryImpl`
+- [x] `GetAllSignsUseCase`, `GetSignsByCategoryUseCase`, `GetSignByIdUseCase`, `SearchSignsUseCase`
+- [x] `SignsTabScreen` — SearchBar + kategori FilterChip + 2 sütun grid
+- [x] `SignDetailScreen` — büyük ikon, kategori chip, açıklama, AI Explain butonu
+- [x] `signsSearchQueryProvider`, `selectedSignCategoryProvider`, `filteredSignsProvider`
 
-#### İstatistik Ekranı
-- [ ] `StatsScreen` — haftalık çalışma grafiği (`fl_chart`)
-- [ ] Kategori bazlı doğruluk oranı pasta grafiği
-- [ ] Seri (streak) takibi — `StreakProvider`
-- [ ] `ProgressTabScreen`'e grafik sekmeleri eklenmesi
+#### İstatistik & Streak
+- [x] `StreakNotifier` — SharedPreferences tabanlı seri takibi (günlük/en uzun)
+- [x] `StatsScreen` — seri kartı, haftalık aktivite çemberleri, konu bazlı bar chart
+- [x] `ProgressTabScreen`'e Stats ve WrongReview butonları eklendi
+- [x] `_AccuracyBarChart` — `fl_chart` BarChart, konu doğruluk yüzdesi
 
 #### Bildirimler
-- [ ] `flutter_local_notifications` entegrasyonu
-- [ ] Günlük çalışma hatırlatıcı (sabah 9, öğleden önce 12)
-- [ ] Seri koruma bildirimi
+- [x] `flutter_local_notifications: ^18.0.0` pubspec'e eklendi
+- [x] `NotificationService` — singleton, initialize, requestPermission
+- [x] `scheduleDailyReminders()` — günlük tekrar bildirimi
+- [x] `showStreakWarning(streak)` — seri tehlike uyarısı
+- [x] `bootstrap.dart`'a `initializeNotifications()` eklendi
+
+#### Router & l10n (Hafta 4)
+- [x] `AppRoutes.signDetail`, `AppRoutes.stats` route'ları eklendi
+- [x] Router `SignsTabScreen`, `SignDetailScreen`, `StatsScreen`, `PaywallScreen`'e bağlandı
+- [x] l10n: signs, premium, stats string'leri `app_tr.arb`'ye eklendi
 
 ---
 
-### ⏳ Hafta 4+ — Play Store Hazırlığı
+### ⏳ Hafta 5 — Play Store Hazırlığı
+
+> Branch: `feature/week-5-play-store` — **henüz açılmadı**
 
 - [ ] `release/v1.0.0` branch açılması
 - [ ] Uygulama ikonu ve splash görsel üretimi (`flutter_launcher_icons`)
 - [ ] `flutter build appbundle --release`
 - [ ] ProGuard / R8 kuralları
-- [ ] Firebase Crashlytics entegrasyonu
+- [ ] Firebase Crashlytics entegrasyonu (production)
+- [ ] Firebase / Supabase / RevenueCat gerçek key'lerin CI'a taşınması
 - [ ] Play Store console: store listing, ekran görüntüleri, içerik derecelendirme
 - [ ] `main`'e merge + tag: `v1.0.0`
 
@@ -223,8 +239,8 @@ lib/
 │   ├── practice/     ✅ domain / data / presentation
 │   ├── home/         ✅ HomeScreen (placeholder)
 │   ├── settings/     ✅ SettingsScreen (placeholder)
-│   ├── signs/        ⏳ Hafta 4 — boş klasör
-│   └── premium/      ⏳ Hafta 4 — boş klasör
+│   ├── signs/        ✅ domain / data / presentation (38 levha)
+│   └── premium/      ✅ domain / data / presentation (RevenueCat + DevFallback)
 └── l10n/             app_tr.arb → AppLocalizations
 ```
 
@@ -267,7 +283,7 @@ flutter analyze   # → 0 issue olmalı
 flutter test      # → tüm testler geçmeli
 
 # 6. Yeni hafta için branch aç
-git checkout -b feature/week-4-premium-signs-stats
+git checkout -b feature/week-5-play-store
 ```
 
 ---

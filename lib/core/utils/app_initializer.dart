@@ -6,6 +6,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import '../../features/quiz/data/datasources/question_remote_datasource.dart';
 import '../../firebase_options.dart';
 import '../constants/env.dart';
+import '../services/notification_service.dart';
 
 Future<void> initializeFirebase() async {
   if (Env.skipFirebaseInit) {
@@ -35,6 +36,11 @@ Future<void> initializeSupabase() async {
     url: Env.supabaseUrl,
     anonKey: Env.supabaseAnonKey, // ignore: deprecated_member_use
   );
+}
+
+Future<void> initializeNotifications() async {
+  await NotificationService.instance.initialize();
+  await NotificationService.instance.requestPermission();
 }
 
 Future<void> initializeRemoteConfig() async {
