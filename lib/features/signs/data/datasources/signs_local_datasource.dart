@@ -1,0 +1,338 @@
+import '../../domain/entities/sign_entity.dart';
+
+abstract interface class SignsLocalDataSource {
+  List<SignEntity> getAllSigns();
+}
+
+class HardcodedSignsDataSource implements SignsLocalDataSource {
+  const HardcodedSignsDataSource();
+
+  @override
+  List<SignEntity> getAllSigns() => _signs;
+}
+
+const List<SignEntity> _signs = [
+  // ─── TEHLİKE (Warning) ────────────────────────────────────────────────────
+  SignEntity(
+    id: 'W01',
+    code: 'T-1',
+    name: 'Tehlikeli Viraj (Sağa)',
+    category: SignCategory.warning,
+    description:
+        'İleride sağa doğru tehlikeli bir viraj olduğunu bildirir. Hızı azaltın.',
+    iconCode: 0x26A0,
+  ),
+  SignEntity(
+    id: 'W02',
+    code: 'T-2',
+    name: 'Tehlikeli Viraj (Sola)',
+    category: SignCategory.warning,
+    description:
+        'İleride sola doğru tehlikeli bir viraj olduğunu bildirir. Hızı azaltın.',
+    iconCode: 0x26A0,
+  ),
+  SignEntity(
+    id: 'W03',
+    code: 'T-3',
+    name: 'Birden Fazla Tehlikeli Viraj',
+    category: SignCategory.warning,
+    description: 'Birbirini izleyen birden fazla tehlikeli viraj bulunmaktadır.',
+    iconCode: 0x26A0,
+  ),
+  SignEntity(
+    id: 'W04',
+    code: 'T-4',
+    name: 'Tehlikeli Yokuş (İniş)',
+    category: SignCategory.warning,
+    description: 'İleride dik bir iniş yokuşu bulunmaktadır. Düşük vitese geçin.',
+    iconCode: 0x26A0,
+  ),
+  SignEntity(
+    id: 'W05',
+    code: 'T-5',
+    name: 'Tehlikeli Yokuş (Çıkış)',
+    category: SignCategory.warning,
+    description: 'İleride dik bir çıkış yokuşu bulunmaktadır.',
+    iconCode: 0x26A0,
+  ),
+  SignEntity(
+    id: 'W06',
+    code: 'T-6',
+    name: 'Kasisli Yol',
+    category: SignCategory.warning,
+    description: 'Yolda kasis (yükseltme) bulunmaktadır. Hızınızı azaltın.',
+    iconCode: 0x26A0,
+  ),
+  SignEntity(
+    id: 'W07',
+    code: 'T-7',
+    name: 'Kaygan Yol',
+    category: SignCategory.warning,
+    description: 'Yol yüzeyi kaygan olabilir. Hız ve takip mesafesine dikkat.',
+    iconCode: 0x26A0,
+  ),
+  SignEntity(
+    id: 'W08',
+    code: 'T-8',
+    name: 'Dar Köprü',
+    category: SignCategory.warning,
+    description:
+        'İlerideki köprü yol genişliğinden dardır. Karşıdan gelen araçlara dikkat edin.',
+    iconCode: 0x26A0,
+  ),
+  SignEntity(
+    id: 'W09',
+    code: 'T-9',
+    name: 'Yol Çalışması',
+    category: SignCategory.warning,
+    description: 'İleride yol çalışması yapılmaktadır. Hızınızı azaltın.',
+    iconCode: 0x26A0,
+  ),
+  SignEntity(
+    id: 'W10',
+    code: 'T-10',
+    name: 'Işıklı İşaret Cihazı',
+    category: SignCategory.warning,
+    description: 'İleride trafik ışıkları bulunmaktadır.',
+    iconCode: 0x26A0,
+  ),
+  SignEntity(
+    id: 'W11',
+    code: 'T-11',
+    name: 'Okul',
+    category: SignCategory.warning,
+    description: 'Yakınlarda okul var. Yavaşlayın, çocuklara dikkat edin.',
+    iconCode: 0x1F3EB,
+  ),
+  SignEntity(
+    id: 'W12',
+    code: 'T-12',
+    name: 'Yaya Geçidi',
+    category: SignCategory.warning,
+    description: 'İleride yaya geçidi bulunmaktadır. Yayalara yol verin.',
+    iconCode: 0x1F6B6,
+  ),
+
+  // ─── YASAK (Prohibition) ──────────────────────────────────────────────────
+  SignEntity(
+    id: 'P01',
+    code: 'Y-1',
+    name: 'Girilmez',
+    category: SignCategory.prohibition,
+    description: 'Bu yönden araç girişi yasaktır.',
+    iconCode: 0x26D4,
+  ),
+  SignEntity(
+    id: 'P02',
+    code: 'Y-2',
+    name: 'Taşıt Giremez',
+    category: SignCategory.prohibition,
+    description: 'Her çeşit taşıtın girişi yasaktır.',
+    iconCode: 0x1F6AB,
+  ),
+  SignEntity(
+    id: 'P03',
+    code: 'Y-3',
+    name: 'Kamyon Giremez',
+    category: SignCategory.prohibition,
+    description: 'Ağır taşıtların ve kamyonların girişi yasaktır.',
+    iconCode: 0x1F69A,
+    isPremium: true,
+  ),
+  SignEntity(
+    id: 'P04',
+    code: 'Y-4',
+    name: 'Park Etmek Yasak',
+    category: SignCategory.prohibition,
+    description: 'Bu alanda araç park edilmesi yasaktır.',
+    iconCode: 0x1F17F,
+  ),
+  SignEntity(
+    id: 'P05',
+    code: 'Y-5',
+    name: 'Durmak ve Park Etmek Yasak',
+    category: SignCategory.prohibition,
+    description: 'Bu alanda araç durdurma ve park etmek kesinlikle yasaktır.',
+    iconCode: 0x1F6D1,
+  ),
+  SignEntity(
+    id: 'P06',
+    code: 'Y-6',
+    name: 'Geçmek Yasak',
+    category: SignCategory.prohibition,
+    description: 'Motorlu araçların birbirini geçmesi yasaktır.',
+    iconCode: 0x26D4,
+    isPremium: true,
+  ),
+  SignEntity(
+    id: 'P07',
+    code: 'Y-7',
+    name: 'İleri Gidemez',
+    category: SignCategory.prohibition,
+    description: 'Bu yönde devam edilemez, dönüş zorunludur.',
+    iconCode: 0x26D4,
+  ),
+  SignEntity(
+    id: 'P08',
+    code: 'Y-8',
+    name: 'Hız Sınırı — 30',
+    category: SignCategory.prohibition,
+    description: 'Azami hız 30 km/s ile sınırlandırılmıştır.',
+    iconCode: 0x1F6D1,
+  ),
+  SignEntity(
+    id: 'P09',
+    code: 'Y-9',
+    name: 'Hız Sınırı — 50',
+    category: SignCategory.prohibition,
+    description: 'Azami hız 50 km/s ile sınırlandırılmıştır.',
+    iconCode: 0x1F6D1,
+  ),
+  SignEntity(
+    id: 'P10',
+    code: 'Y-10',
+    name: 'Hız Sınırı — 90',
+    category: SignCategory.prohibition,
+    description: 'Azami hız 90 km/s ile sınırlandırılmıştır.',
+    iconCode: 0x1F6D1,
+    isPremium: true,
+  ),
+
+  // ─── ZORUNLULUK (Obligation) ──────────────────────────────────────────────
+  SignEntity(
+    id: 'O01',
+    code: 'Z-1',
+    name: 'İleri',
+    category: SignCategory.obligation,
+    description: 'Yalnızca ileri gidilmesi zorunludur.',
+    iconCode: 0x2B06,
+  ),
+  SignEntity(
+    id: 'O02',
+    code: 'Z-2',
+    name: 'Sağa Dön',
+    category: SignCategory.obligation,
+    description: 'Yalnızca sağa dönülmesi zorunludur.',
+    iconCode: 0x27A1,
+  ),
+  SignEntity(
+    id: 'O03',
+    code: 'Z-3',
+    name: 'Sola Dön',
+    category: SignCategory.obligation,
+    description: 'Yalnızca sola dönülmesi zorunludur.',
+    iconCode: 0x2B05,
+  ),
+  SignEntity(
+    id: 'O04',
+    code: 'Z-4',
+    name: 'İleri veya Sağa',
+    category: SignCategory.obligation,
+    description: 'İleri veya sağa gidilebilir.',
+    iconCode: 0x2197,
+  ),
+  SignEntity(
+    id: 'O05',
+    code: 'Z-5',
+    name: 'Dönel Kavşak',
+    category: SignCategory.obligation,
+    description: 'Dönel kavşak var, saat yönünde dönün.',
+    iconCode: 0x1F504,
+  ),
+  SignEntity(
+    id: 'O06',
+    code: 'Z-6',
+    name: 'Yaya Yolu',
+    category: SignCategory.obligation,
+    description: 'Yalnızca yayaların kullanabileceği yol.',
+    iconCode: 0x1F6B6,
+    isPremium: true,
+  ),
+
+  // ─── BİLGİ (Informational) ────────────────────────────────────────────────
+  SignEntity(
+    id: 'I01',
+    code: 'B-1',
+    name: 'Otoban Başlangıcı',
+    category: SignCategory.informational,
+    description: 'Otoban başlamaktadır. Otoban kuralları geçerlidir.',
+    iconCode: 0x1F6E3,
+  ),
+  SignEntity(
+    id: 'I02',
+    code: 'B-2',
+    name: 'Otoban Sonu',
+    category: SignCategory.informational,
+    description: 'Otoban sona ermektedir. Normal yol kurallarına geçin.',
+    iconCode: 0x1F6E3,
+  ),
+  SignEntity(
+    id: 'I03',
+    code: 'B-3',
+    name: 'İlk Yardım',
+    category: SignCategory.informational,
+    description: 'İleride ilk yardım istasyonu veya hastane bulunmaktadır.',
+    iconCode: 0x2695,
+  ),
+  SignEntity(
+    id: 'I04',
+    code: 'B-4',
+    name: 'Benzin İstasyonu',
+    category: SignCategory.informational,
+    description: 'İleride akaryakıt istasyonu bulunmaktadır.',
+    iconCode: 0x26FD,
+  ),
+  SignEntity(
+    id: 'I05',
+    code: 'B-5',
+    name: 'Otopark',
+    category: SignCategory.informational,
+    description: 'İleride otopark alanı bulunmaktadır.',
+    iconCode: 0x1F17F,
+    isPremium: true,
+  ),
+  SignEntity(
+    id: 'I06',
+    code: 'B-6',
+    name: 'Dinlenme Alanı',
+    category: SignCategory.informational,
+    description: 'İleride mola/dinlenme alanı bulunmaktadır.',
+    iconCode: 0x1F3D5,
+  ),
+
+  // ─── ÖNCELİK (Priority) ───────────────────────────────────────────────────
+  SignEntity(
+    id: 'PR01',
+    code: 'PY-1',
+    name: 'Dur',
+    category: SignCategory.priority,
+    description:
+        'Tam olarak durun, ana yoldaki araçlara yol verin. En önemli işaret.',
+    iconCode: 0x1F6D1,
+  ),
+  SignEntity(
+    id: 'PR02',
+    code: 'PY-2',
+    name: 'Yol Ver',
+    category: SignCategory.priority,
+    description: 'Ana yoldaki araçlara geçiş önceliği tanıyın.',
+    iconCode: 0x26A0,
+  ),
+  SignEntity(
+    id: 'PR03',
+    code: 'PY-3',
+    name: 'Geçiş Üstünlüğü',
+    category: SignCategory.priority,
+    description: 'Bu yolda geçiş üstünlüğüne sahipsiniz.',
+    iconCode: 0x2B06,
+  ),
+  SignEntity(
+    id: 'PR04',
+    code: 'PY-4',
+    name: 'Karşıdan Gelen Öncelikli',
+    category: SignCategory.priority,
+    description: 'Dar geçitte karşıdan gelen araçlara yol verin.',
+    iconCode: 0x27A1,
+    isPremium: true,
+  ),
+];

@@ -1,20 +1,39 @@
-You are an expert Flutter developer.
-Always use Clean Architecture with feature-first folder structure.
-State management: Riverpod with riverpod_annotation (code generation).
-Routing: go_router with named routes.
-Error handling: fpdart Either<Failure, T>.
-Models: freezed + json_serializable.
-Never use setState except in very simple isolated widgets.
-Always write null-safe Dart code.
-When creating a new feature, always create: domain/entities, domain/repositories (abstract), domain/usecases, data/datasources, data/repositories (impl), presentation/providers, presentation/screens.
-Respond in Turkish when I write in Turkish.
+## Kaldığın Yerden Devam
 
-## Git branch stratejisi
+Her yeni chat veya bilgisayar değişikliğinde ilk olarak şunu oku:
+- `PROJECT_STATUS.md` — neler yapıldı, neler kaldı, teknik notlar, hızlı başlangıç komutu
+Bu dosyayı okumadan hiçbir geliştirme başlatma.
+Bir özellik tamamlandığında PROJECT_STATUS.md içindeki ilgili checkbox'ı işaretle ve dosyayı commit'e dahil et.
+
+---
+
+## Flutter & Mimari Kurallar
+
+Sen uzman bir Flutter geliştiricisisin.
+Her zaman Clean Architecture + feature-first klasör yapısı kullan.
+State management: Riverpod (riverpod_annotation code generation — ancak build_runner Dart 3.10 uyumsuzluğunda manuel Provider/NotifierProvider yaz).
+Routing: go_router, named routes.
+Hata yönetimi: fpdart Either<Failure, T>.
+Modeller: freezed + json_serializable (build_runner çalışıyorsa).
+setState yalnızca çok basit izole widget'larda kullanılabilir.
+Her zaman null-safe Dart kodu yaz.
+Yeni feature oluştururken mutlaka şu katmanları oluştur:
+  domain/entities, domain/repositories (abstract), domain/usecases,
+  data/datasources, data/repositories (impl),
+  presentation/providers, presentation/screens.
+
+Türkçe yazıldığında Türkçe yanıtla.
+
+---
+
+## Git Branch Stratejisi
+
 - `main` — kararlı sürüm; yalnızca release merge.
 - `develop` — entegrasyon dalı; feature branch'ler buraya merge edilir.
-- `feature/week-N-<kisa-aciklama>` — haftalık özellik geliştirme (ör. `feature/week-3-progress-ai-practice`).
+- `feature/week-N-<kisa-aciklama>` — haftalık özellik geliştirme.
 - `fix/<kisa-aciklama>` — hata düzeltmeleri.
 - `release/vX.Y.Z` — sürüm hazırlığı.
 - `hotfix/<kisa-aciklama>` — production acil düzeltmeler.
 - Yeni iş her zaman güncel `develop`'dan branch alır; `main` üzerinde doğrudan geliştirme yapılmaz.
-- Merge öncesi `git fetch origin` + `flutter analyze` + `flutter test` çalıştırılır.
+- Merge öncesi: `git fetch origin` → `flutter analyze` (0 issue) → `flutter test` (tümü geçmeli).
+- Merge sonrası PROJECT_STATUS.md güncellenerek commit edilir.

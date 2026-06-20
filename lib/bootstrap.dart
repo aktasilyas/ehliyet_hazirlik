@@ -15,6 +15,7 @@ Future<void> bootstrap() async {
   await initializeFirebase();
   await initializeSupabase();
   await initializeRemoteConfig();
+  await initializeNotifications();
 
   if (Firebase.apps.isNotEmpty && !kIsWeb) {
     FlutterError.onError =
