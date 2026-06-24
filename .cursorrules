@@ -35,5 +35,7 @@ Türkçe yazıldığında Türkçe yanıtla.
 - `release/vX.Y.Z` — sürüm hazırlığı.
 - `hotfix/<kisa-aciklama>` — production acil düzeltmeler.
 - Yeni iş her zaman güncel `develop`'dan branch alır; `main` üzerinde doğrudan geliştirme yapılmaz.
+- **PR-first workflow:** Feature branch açılır açılmaz `gh pr create --draft --base develop --head feature/...` ile draft PR oluşturulur. Kodlama bittikten sonra PR ready olarak işaretlenir, `flutter analyze` + `flutter test` geçince merge edilir.
 - Merge öncesi: `git fetch origin` → `flutter analyze` (0 issue) → `flutter test` (tümü geçmeli).
 - Merge sonrası PROJECT_STATUS.md güncellenerek commit edilir.
+- `gh` CLI kurulu olduğunda tüm PR işlemleri (`gh pr create`, `gh pr merge`, `gh pr list`) komut satırından yapılır.
